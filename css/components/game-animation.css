@@ -1,0 +1,130 @@
+.game-animation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-grow: 10;
+}
+.game-animation__player-1 {
+  width: 200px;
+  height: 200px;
+  transform: rotateY(180deg);
+}
+
+.game-animation__player-2 {
+  width: 200px;
+  height: 200px;
+}
+#animation-rock-left {
+  display: block;
+  animation: fistDownLeft 1s;
+}
+#animation-rock-right {
+  display: block;
+  animation: fistDownRight 1s;
+}
+#animation-paper-left {
+  display: none;
+}
+#animation-paper-right {
+  display: none;
+}
+#animation-scissors-left {
+  display: none;
+}
+#animation-scissors-right {
+  display: none;
+}
+
+@keyframes tieLeft {
+  0% {
+    transform: translateY(0) rotateY(180deg);
+  }
+  50% {
+    transform: translateY(-10px) rotateY(180deg);
+  }
+  100% {
+    transform: translateY(0) rotateY(180deg);
+  }
+}
+
+@keyframes tieRight {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+
+}
+
+@keyframes loseFadeOutRight {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes loseFadeOutLeft {
+  from {
+    opacity: 1;
+    transform: rotateY(180deg);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(180deg);
+  }
+}
+
+@keyframes winLeft {
+  from {
+    transform: translateX(0) rotateY(180deg);
+  }
+  to {
+    transform: translateX(100px) rotateY(180deg);
+  }
+}
+
+@keyframes winRight {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100px);
+  }
+}
+
+@keyframes fistDownLeft {
+  0% {
+    opacity: 0;
+    transform: rotateZ(0deg) rotateY(180deg);
+  }
+  50% {
+    opacity: 1;
+    transform: rotateZ(-90deg) rotateY(180deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotateZ(0deg) rotateY(180deg);
+  }
+}
+
+@keyframes fistDownRight {
+  0% {
+    opacity: 0;
+    transform: rotateZ(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: rotateZ(90deg) ;
+  }
+  100% {
+    opacity: 1;
+    transform: rotateZ(0deg) ;
+  }
+}

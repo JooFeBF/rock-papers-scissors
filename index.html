@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/components/header.css">
+  <link rel="stylesheet" href="./css/components/game-selector.css">
+  <link rel="stylesheet" href="./css/components/main.css">
+  <link rel="stylesheet" href="./css/components/game-mode-selection.css">
+  <link rel="stylesheet" href="./css/components/game.css">
+  <link rel="stylesheet" href="./css/components/turns-selection.css">
+  <link rel="stylesheet" href="./css/components/turn-options.css">
+  <link rel="stylesheet" href="./css/components/game-animation.css">
+  <link rel="stylesheet" href="./css/generic/reset.css">
+  <link rel="stylesheet" href="./css/generic/text.css">
+  <link rel="stylesheet" href="./css/elements/body.css">
+  <title>Rock Paper Scissors</title>
+</head>
+<body>
+  <header class="header">
+    <h1 class="header__title">Rock Paper Scissors</h1>
+  </header>
+  <main class="main">
+    <section class="game-selector">
+      <h3 class="game-selector__title">Choose a game mode</h3>
+      <div class="game-selector__options game-mode-selection">
+        <button class="game-mode-selection__button" id="single-player">Single player</button>
+        <button class="game-mode-selection__button" id="multiplayer">Multiplayer</button>
+      </div>
+    </section>
+    <form class="turns-selection" style="display: none;">
+      <h3 class="turns-selection__title">Choose the number of turns</h3>
+      <div class="turns-selection__options turn-options">
+        <button class="turn-options__button" id="decrease-turns"><img src="./assets/icons/arrow_drop_down_24dp_FILL0_wght400_GRAD0_opsz24.svg" alt="arrow-down"></button>
+        <input value="1" class="turn-options__input" type="number" disabled id="turns-input">
+        <button class="turn-options__button" id="increase-turns"><img src="./assets/icons/arrow_drop_up_24dp_FILL0_wght400_GRAD0_opsz24.svg" alt="arrow-up"></button>
+      </div>
+      <button class="turns-selection__send-button">Ok</button>
+    </form>
+    <section class="game" style="display: none;">
+      <header class="game__header">
+          <p class="game__score">Score: <span id="score-1">0</span></p>
+        <div class="game__information">
+          <h2 class="game__title">Single player</h2>
+          <p class="game__turns">Turns: <span id="turns">1</span></p>
+          <button class="game__restart-button">Restart</button>
+        </div>
+          <p class="game__score">Score: <span id="score-2">0</span></p>
+      </header>
+      <main class="game__weapon-selection">
+        <strong class="game__player">Player <span id="player-number">1</span></strong>
+        <img class="game__weapon-img" src="./assets/images/Rock.png" alt="Rock"> 
+        <div class="game__weapons">
+          <button class="game__weapon" id="rock">✊</button>
+          <button class="game__weapon" id="scissors">✌️</button>
+          <button class="game__weapon" id="paper">🫱</button>
+        </div>
+        <button class="game__go">Go</button>
+      </main>
+      <section style="display: none;" class="game-animation">
+        <img class="game-animation__player-1" id="animation-rock-left" src="./assets/images/Rock.png" alt="Rock">
+        <img class="game-animation__player-2" id="animation-rock-right" src="./assets/images/Rock.png" alt="Rock">
+        <img class="game-animation__player-1" id="animation-paper-left" src="./assets/images/Paper.png" alt="Paper">
+        <img class="game-animation__player-2" id="animation-paper-right" src="./assets/images/Paper.png" alt="Paper">
+        <img class="game-animation__player-1" id="animation-scissors-left" src="./assets/images/Scissors.png" alt="Scissors">
+        <img class="game-animation__player-2" id="animation-scissors-right" src="./assets/images/Scissors.png" alt="Scissors">
+      </section>
+    </section>
+  </main>
+  <script src="./scripts/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+.turn-options {
+  display: flex;
+}
+.turn-options__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+  background-image: linear-gradient(to right, #f12711, #f5af19);
+  border-radius: 50%;
+  transition: filter 0.3s;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+}
+.turn-options__button:hover {
+  filter: brightness(1.1);
+}
+.turn-options__input {
+  background-color: transparent;
+  border: 0;
+  text-align: center;
+}

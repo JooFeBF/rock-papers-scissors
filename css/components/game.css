@@ -1,0 +1,130 @@
+.game {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+.game__header {
+    display: flex;
+    justify-content: space-around;
+    flex-grow: 1;
+    padding: 10px 0;
+    align-items: center;
+}
+.game__title {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+.game__restart-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0;
+    background-image: linear-gradient(to right, #f12711, #f5af19);
+    border-radius: 20px;
+    transition: filter 0.3s;
+    cursor: pointer;
+    color: #fff;
+    padding: 0.5rem 1rem;
+}
+
+.game__restart-button:hover {
+    filter: brightness(1.1);
+}
+.game__score {
+  list-style: none;
+  padding: 0;
+  background-image: linear-gradient(to right, #f12711, #f5af19);
+  color: #fff;
+  border-radius: 30px;
+  padding: 0 15px;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+}
+
+.game__score span {
+  font-weight: normal;
+}
+.game__information {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.game__player {
+  text-align: center;
+}
+
+.game__weapon-img {
+  height: 200px;
+  width: 200px;
+  align-self: center;
+}
+
+.game__weapons {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 10px;
+}
+.game__weapon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+  background-image: linear-gradient(to right, #f12711, #f5af19);
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+  transition: filter 0.3s;
+}
+.game__weapon-selection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    flex-grow: 10;
+    animation: fadeIn 1s;
+}
+.game__weapon:hover {
+  filter: brightness(1.1);
+}
+.game__go {
+  border: 0;
+  align-self: center;
+  background-image: linear-gradient(to right, #f12711, #f5af19);
+  border-radius: 30px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: filter 0.3s;
+  color: #fff;
+}
+.game__go:hover {
+  filter: brightness(1.1);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}

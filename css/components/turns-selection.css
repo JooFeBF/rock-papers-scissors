@@ -1,0 +1,23 @@
+.turns-selection {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.turns-selection__send-button {
+  border: 0;
+  background-image: linear-gradient(to right, #f12711, #f5af19);
+  border-radius: 30px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: filter 0.3s;
+  color: #fff;
+}
+
+.turns-selection__title {
+  text-align: center;
+}
+
+.turns-selection__send-button:hover {
+  filter: brightness(1.1);
+}
