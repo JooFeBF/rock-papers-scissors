@@ -76,7 +76,6 @@ weaponSelection.addEventListener('click', (e) => {
   if (target.classList.contains('game__weapon')) {
     if (gameMode === GAME_OPTIONS.SINGLE_PLAYER) {
       player1Weapon = target.id;
-      player2Weapon = WEAPONS[Object.keys(WEAPONS)[Math.floor(Math.random() * 3)]];
     } else {
       if (playerTurn === 1) {
         player1Weapon = target.id;
@@ -85,13 +84,11 @@ weaponSelection.addEventListener('click', (e) => {
       }
     }
   }
-  console.log(player1Weapon, player2Weapon)
 })
 
 const weaponSelectButton = document.getElementsByClassName('game__go').item(0);
 
 const getWinner = (player1Weapon, player2Weapon) => {
-  console.log(player1Weapon, player2Weapon)
   if (player1Weapon === player2Weapon) {
     return PLAYER_WINS.TIE;
   } else {
@@ -154,9 +151,9 @@ const playerNumber = document.getElementById('player-number');
 weaponSelectButton.addEventListener('click', (e) => {
   e.target.disabled = true;
   if (gameMode === GAME_OPTIONS.SINGLE_PLAYER) {
+    player2Weapon = WEAPONS[Object.keys(WEAPONS)[Math.floor(Math.random() * 3)]];
     const result = getWinner(player1Weapon, player2Weapon);
     weaponSection.style.animation = 'fadeOut 1s';
-    console.log(result)
     setTimeout(() => {
       weaponSection.style.display = 'none';
       gameAnimationSection.style.display = 'flex';
@@ -204,6 +201,16 @@ weaponSelectButton.addEventListener('click', (e) => {
           rightAnimation.style.animation = '';
           animationRockLeft.style.display = 'block';
           animationRockRight.style.display = 'block';
+          if(parseInt(scorePlayer1.innerText) > parseInt(scorePlayer2.innerText)) {
+            scorePlayer1.style.color = 'green';
+            scorePlayer2.style.color = 'red';
+          } else if(parseInt(scorePlayer1.innerText) < parseInt(scorePlayer2.innerText)) {
+            scorePlayer2.style.color = 'green';
+            scorePlayer1.style.color = 'red';
+          } else {
+            scorePlayer1.style.color = 'white';
+            scorePlayer2.style.color = 'white';
+          }
           e.target.disabled = false;
         }, 1000)
       }, 1000)
@@ -219,7 +226,6 @@ weaponSelectButton.addEventListener('click', (e) => {
       playerNumber.innerText = '1';
       const result = getWinner(player1Weapon, player2Weapon);
       weaponSection.style.animation = 'fadeOut 1s';
-      console.log(result)
       setTimeout(() => {
       weaponSection.style.display = 'none';
       gameAnimationSection.style.display = 'flex';
